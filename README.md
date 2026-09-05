@@ -20,19 +20,20 @@ Bhavani is a desktop pet which monitors your screen and annoys you if you are be
 People are being productive and are not doomscrolling enough. Bhavani hates productive people. Bhavani wants you to doom scroll. Don't be productive, be like Bhavani, poke your nose in other's business.
 
 ### The Solution (that nobody asked for)
-Bhavani herself is the solution. Bhavani makes sure you are using your time doomsscrolling instead of being productive. Dont make her turn into 'Bhavanithalla' unless you want to be scolded.
+Bhavani herself is the solution. Bhavani makes sure you are using your time doomscrolling instead of being productive. Dont make her turn into 'Bhavanithalla' unless you want to be scolded.
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- Python, Arduino IDE
-- [Libraries used]
-- [Tools used]
+- Languages: Python, Arduino IDE
+- Libraries used (in Python): os, time, json, pygetwindow, serial, pygame
+- Libraries used (in Arduino IDE): Wire.h, Adafruit_GFX.h, Adafruit_SSD1306.h, ESP32Servo.h, bitmaps.h
+- Tools: Visual Studio Code, Arduino IDE
 
 For Hardware:
-- ESP32 Dev Module, OLED Display(128x64 px), Active buzzer, 2 Servo Motors (SG9)  
-- 1- transistor(BC547),1- 1k ohm resistor, 1- Protection Diode, Jumper wires, Perf Board
-- Soldering Iron
+- Main components:ESP32 Dev Module, OLED Display(128x64 px), Active buzzer, 2 Servo Motors (SG9)  
+- Specifications: 1- transistor(BC547),1- 1k ohm resistor, 1- Protection Diode, Jumper wires, Perf Board
+- Tools: Soldering Iron
 
 ### Implementation
 For Software:
