@@ -80,29 +80,6 @@ Follow these steps to set up the software environment and configure both the Pyt
 ### Project Documentation
 For Software:
 
-# Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
-
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
-
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
-
-# Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
-
-For Hardware:
-
-# Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
-
 # Build Photos
 Components:
 | Component | Image |
@@ -122,16 +99,15 @@ In this stage, we connected the OLED Display and the active buzzer to the ESP32.
 <img src="https://github.com/user-attachments/assets/5236f147-c6da-4732-9b0e-ecc0e975b4a5" width="600" alt="Soldering Process">
 
 After successful breadboard testing, the components were carefully arranged and soldered onto a perf board to ensure a compact and durable final build.
-Final Photo:
+
+##Final Photo:
+<img width="1200" height="1600" alt="image" src="https://github.com/user-attachments/assets/302b95d0-2ed4-42a9-bdf8-32ed94074895" />
 
 
 ### Project Demo
 # Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
-
-# Additional Demos
-[Add any extra demo materials/links]
+https://drive.google.com/file/d/1qsKzB9vCvEltwk5urWQQe7VQyTjGo4KB/view?usp=drivesdk
+This video showcases how Bhavani 'behaves' as her health deteriorates when we start to be productive. She goes from being a 'diva' to 'Bhavanithalla' who curses us out. We can see how her expression changes according to the change in her health. For each expression bhavani creates a sound to let us know that she is gradually changing to Bhavanithalla.
 
 ## Team Contributions
 - K Ananya Ramesh: Hardware
