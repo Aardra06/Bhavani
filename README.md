@@ -106,8 +106,8 @@ For Hardware:
 # Build Photos
 Components:
 1. ESP32 Dev Module
-<img width="1920" height="1920" alt="image" src="https://github.com/user-attachments/assets/cb8714ba-beac-4807-8fa2-2c4726182a35" />
-<br>
+   <img width="1920" height="1920" alt="image" src="https://github.com/user-attachments/assets/cb8714ba-beac-4807-8fa2-2c4726182a35" />
+   <br>
 2. OLED Display
    <img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/68ff7c13-9b38-4bbb-b23e-e587d91735a0" />
    <br>
