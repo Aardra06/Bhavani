@@ -38,10 +38,44 @@ For Hardware:
 ### Implementation
 For Software:
 # Installation
-[commands]
+Follow these steps to set up the software environment and configure both the Python tracking script and the ESP32 desktop companion.
+### Prerequisites
+* **Python 3.x** installed on your system
+* **Arduino IDE** (v2.0 or later recommended)
+* An **ESP32 Microcontroller** connected via USB cable
 
+### 1. Hardware Firmware Setup (Arduino IDE)
+
+1. **Install ESP32 Board Support:**
+   * Open Arduino IDE and navigate to **File > Preferences**.
+   * Add the following URL to **Additional Boards Manager URLs**:
+     ```text
+     [https://espressif.github.io/arduino-esp32/package_esp32_index.json](https://espressif.github.io/arduino-esp32/package_esp32_index.json)
+     ```
+   * Go to **Tools > Board > Boards Manager...**, search for `esp32`, and install the **esp32 by Espressif Systems** package.
+
+2. **Required Libraries:**
+   Ensure the following libraries are installed via **Tools > Manage Libraries...**:
+   * `Adafruit SSD1306`
+   * `Adafruit GFX Library`
+   * `ESP32Servo`
+
+3. **Upload Firmware:**
+   * Open `bhavani.ino` in Arduino IDE.
+   * Select your board under **Tools > Board > ESP32 Arduino** (e.g., *ESP32 Dev Module*).
+   * Select the correct port under **Tools > Port**.
+   * Click **Upload**.
+   * 
+### 2. Software Setup (Python Tracker)
+
+1. **Clone the Repository:**
+   ```bash
+   git clone [https://github.com/Aardra06/Bhavani.git](https://github.com/Aardra06/Bhavani.git)
+   cd Bhavani
+2. Install necessary python libraries: pygame pyserial pygetwindow
+3. Configure COM Port; update the COM_PORT variable to match your USB serial port
 # Run
-[commands]
+ To run Bhavani, jsut connect your ESP32 to your computer via USB and launch the tracker script: python tracker.py
 
 ### Project Documentation
 For Software:
@@ -70,14 +104,24 @@ For Hardware:
 *Add caption explaining the schematic*
 
 # Build Photos
-![Components](Add photo of your components here)
-*List out all components shown*
+Components:
+1. ESP32 Dev Module
+<img width="1920" height="1920" alt="image" src="https://github.com/user-attachments/assets/cb8714ba-beac-4807-8fa2-2c4726182a35" />
+2. OLED Display
+   <img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/68ff7c13-9b38-4bbb-b23e-e587d91735a0" />
+3. Active Buzzer
+   <img width="500" height="355" alt="image" src="https://github.com/user-attachments/assets/21e83bfa-8ce1-4c61-b961-04287dd3e699" />
+5. Servo Motors
+   <img width="1200" height="900" alt="image" src="https://github.com/user-attachments/assets/2f949032-ec43-4caa-9f86-db5fe9655c65" />
 
-![Build](Add photos of build process here)
-*Explain the build steps*
+Build Process:
+1. <img width="1600" height="1600" alt="image" src="https://github.com/user-attachments/assets/266e8fec-fb69-4be8-9e7a-f23cb28c7770" />
+Here we have connected the OLED Display and the buzzer to the ESP32. The default expression is seen on the OLED screen.
+2.<img width="1600" height="1600" alt="image" src="https://github.com/user-attachments/assets/5236f147-c6da-4732-9b0e-ecc0e975b4a5" />
+Here we have arranged and soldered the components to the perf board.
 
-![Final](Add photo of final product here)
-*Explain the final build*
+Final Photo:
+
 
 ### Project Demo
 # Video
