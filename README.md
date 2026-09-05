@@ -112,12 +112,16 @@ Components:
 | **Active Buzzer** | <img src="https://github.com/user-attachments/assets/21e83bfa-8ce1-4c61-b961-04287dd3e699" width="200"> |
 | **Servo Motors** | <img src="https://github.com/user-attachments/assets/2f949032-ec43-4caa-9f86-db5fe9655c65" width="200"> |
 
-Build Process:
-1. <img width="1600" height="1600" alt="image" src="https://github.com/user-attachments/assets/266e8fec-fb69-4be8-9e7a-f23cb28c7770" />
-Here we have connected the OLED Display and the buzzer to the ESP32. The default expression is seen on the OLED screen.
-2.<img width="1600" height="1600" alt="image" src="https://github.com/user-attachments/assets/5236f147-c6da-4732-9b0e-ecc0e975b4a5" />
-Here we have arranged and soldered the components to the perf board.
+## Build Process
+### Step 1: Initial Wiring and Display Test
+<img src="https://github.com/user-attachments/assets/266e8fec-fb69-4be8-9e7a-f23cb28c7770" width="600" alt="Breadboard Testing">
 
+In this stage, we connected the OLED Display and the active buzzer to the ESP32. The wiring was verified by displaying the default "Resting" expression on the OLED screen.
+
+### Step 2: Component Assembly and Soldering
+<img src="https://github.com/user-attachments/assets/5236f147-c6da-4732-9b0e-ecc0e975b4a5" width="600" alt="Soldering Process">
+
+After successful breadboard testing, the components were carefully arranged and soldered onto a perf board to ensure a compact and durable final build.
 Final Photo:
 
 
