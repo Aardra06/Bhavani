@@ -59,11 +59,11 @@ def play_mood_audio(expr_index):
     else:
         print(f"Audio file missing for Mood Index {expr_index}: {audio_path}")
 
-# Initialize and play Expression 5 (Resting) at boot up
+# Boot startup: Send image state to ESP32 first, then play audio
 current_expression = 5
-play_mood_audio(current_expression)
 if ser:
     ser.write(f"HEALTH:{health}\n".encode())
+play_mood_audio(current_expression)
 
 while True:
     status = "Working"
@@ -86,7 +86,21 @@ while True:
         else:
             new_expression = min(4, int((health / 100.0) * 5))
 
-        # Check for expression changes
+        # 1. First, send updated health to ESP32 to change display face immediately
+        if ser:
+            ser.write(f"HEALTH:{health}\n".encode())
+
+        # 2. Save state to data.json
+        data = {
+            "health": health,
+            "status": status,
+            "expression": new_expression,
+            "last_updated": int(time.time())
+        }
+        with open(DATA_FILE, "w") as f:
+            json.dump(data, f)
+
+        # 3. Next, check for expression changes and trigger the blocking audio
         if new_expression != current_expression:
             if health < prev_health or (health > prev_health and new_expression == 5):
                 play_mood_audio(new_expression)
@@ -94,20 +108,6 @@ while True:
             current_expression = new_expression
 
         prev_health = health
-
-        # Update ESP32
-        if ser:
-            ser.write(f"HEALTH:{health}\n".encode())
-
-        # Save to data.json
-        data = {
-            "health": health,
-            "status": status,
-            "expression": current_expression,
-            "last_updated": int(time.time())
-        }
-        with open(DATA_FILE, "w") as f:
-            json.dump(data, f)
 
         print(f"Status: {status} | Health: {health}% | Mood Index: {current_expression}")
 
