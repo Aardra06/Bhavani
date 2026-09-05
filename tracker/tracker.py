@@ -14,14 +14,13 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 COM_PORT = "COM4"
 DATA_FILE = os.path.join(BASE_DIR, "data.json")
 
-# Expression audio mapping (Index 5 = Resting/Full Health, Index 0 = Max Anger/Low Health)
 AUDIO_MAP = {
     0: os.path.join(BASE_DIR, "expression_0.mp3"),   # Very Angry
     1: os.path.join(BASE_DIR, "expression_1.mp3"),   # Angry
     2: os.path.join(BASE_DIR, "expression_2.mpeg"),  # Annoyed
     3: os.path.join(BASE_DIR, "expression_3.mpeg"),  # Neutral
     4: os.path.join(BASE_DIR, "expression_4.mpeg"),  # Happy
-    5: os.path.join(BASE_DIR, "expression_5.mpeg")   # Resting / Working
+    5: os.path.join(BASE_DIR, "expression_5.mpeg")   # Resting / Full Health
 }
 
 try:
@@ -48,13 +47,10 @@ def play_mood_audio(expr_index):
         try:
             print(f"Playing Laptop Audio for Mood Index {expr_index}: {os.path.basename(audio_path)}")
             
-            # Stop any ongoing playback
             pygame.mixer.music.stop()
-            
             pygame.mixer.music.load(audio_path)
             pygame.mixer.music.play()
             
-            # Wait for the audio clip to finish completely
             while pygame.mixer.music.get_busy():
                 time.sleep(0.5)
 
@@ -63,14 +59,20 @@ def play_mood_audio(expr_index):
     else:
         print(f"Audio file missing for Mood Index {expr_index}: {audio_path}")
 
+# Initialize and play Expression 5 (Resting) at boot up
+current_expression = 5
+play_mood_audio(current_expression)
+if ser:
+    ser.write(f"HEALTH:{health}\n".encode())
+
 while True:
     status = "Working"
     try:
+        # Determine active window state
         window = gw.getActiveWindow()
         if window and window.title:
             title = window.title.lower()
             
-            # Check for distractions
             if any(k in title for k in distraction_keywords):
                 status = "Procrastinating"
                 health = min(100, health + 10)  # Health INCREASES when procrastinating
@@ -78,16 +80,14 @@ while True:
                 status = "Working"
                 health = max(0, health - 15)    # Health DROPS when working
 
-        # Exact Expression Index Mapping (Health 100 -> Index 5, Health 0 -> Index 0)
+        # Map health to expression index
         if health == 100:
             new_expression = 5
         else:
             new_expression = min(4, int((health / 100.0) * 5))
 
-        # Check expression change
+        # Check for expression changes
         if new_expression != current_expression:
-            # Condition 1: Health is dropping (Play audio immediately)
-            # Condition 2: Health is increasing AND reached full recovery (Index 5)
             if health < prev_health or (health > prev_health and new_expression == 5):
                 play_mood_audio(new_expression)
 
@@ -95,11 +95,11 @@ while True:
 
         prev_health = health
 
-        # Send updated health to ESP32 over Serial
+        # Update ESP32
         if ser:
             ser.write(f"HEALTH:{health}\n".encode())
 
-        # Save state to data.json
+        # Save to data.json
         data = {
             "health": health,
             "status": status,
@@ -114,5 +114,4 @@ while True:
     except Exception as e:
         print(f"Tracking error: {e}")
 
-    # Standard loop interval between health checks
     time.sleep(5)
