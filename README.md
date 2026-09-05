@@ -100,7 +100,7 @@ In this stage, we connected the OLED Display and the active buzzer to the ESP32.
 
 After successful breadboard testing, the components were carefully arranged and soldered onto a perf board to ensure a compact and durable final build.
 
-##Final Photo:
+## Final Photo:
 <img width="1200" height="1600" alt="image" src="https://github.com/user-attachments/assets/302b95d0-2ed4-42a9-bdf8-32ed94074895" />
 
 
