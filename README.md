@@ -107,12 +107,16 @@ For Hardware:
 Components:
 1. ESP32 Dev Module
 <img width="1920" height="1920" alt="image" src="https://github.com/user-attachments/assets/cb8714ba-beac-4807-8fa2-2c4726182a35" />
+<br>
 2. OLED Display
    <img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/68ff7c13-9b38-4bbb-b23e-e587d91735a0" />
+   <br>
 3. Active Buzzer
    <img width="500" height="355" alt="image" src="https://github.com/user-attachments/assets/21e83bfa-8ce1-4c61-b961-04287dd3e699" />
+   <br>
 5. Servo Motors
    <img width="1200" height="900" alt="image" src="https://github.com/user-attachments/assets/2f949032-ec43-4caa-9f86-db5fe9655c65" />
+   <br>
 
 Build Process:
 1. <img width="1600" height="1600" alt="image" src="https://github.com/user-attachments/assets/266e8fec-fb69-4be8-9e7a-f23cb28c7770" />
