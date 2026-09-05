@@ -2,39 +2,37 @@
 
 
 
-# [Project Name] 🎯
+# BHAVANI🎯
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: Haikyuu
 
 
 ### Team Members
-- Team Lead: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Team Lead: K Ananya Ramesh - School of Engineering, CUSAT
+- Member 2: Aardra S V - School of Engineering, CUSAT
 
 ### Project Description
-[2-3 lines about what your project does]
+Bhavani is a desktop pet which monitors your screen and annoys you if you are being productive. As long as you use social medias such as Youtube, Instagram etc, Bhavani will be healthy and a 'diva'. The moment you stop doom scrolling and start being productive, Bhavani's health deteriorates and she starts to annoy you. In the end she becomes 'Bhavanithalla' and scolds you.
 
 ### The Problem (that doesn't exist)
-[What ridiculous problem are you solving?]
+People are being productive and are not doomscrolling enough. Bhavani hates productive people. Bhavani wants you to doom scroll. Don't be productive, be like Bhavani, poke your nose in other's business.
 
 ### The Solution (that nobody asked for)
-[How are you solving it? Keep it fun!]
+Bhavani herself is the solution. Bhavani makes sure you are using your time doomsscrolling instead of being productive. Dont make her turn into 'Bhavanithalla' unless you want to be scolded.
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
+- Python, Arduino IDE
 - [Libraries used]
 - [Tools used]
 
 For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
+- ESP32 Dev Module, OLED Display(128x64 px), Active buzzer, 2 Servo Motors (SG9)  
+- 1- transistor(BC547),1- 1k ohm resistor, 1- Protection Diode, Jumper wires, Perf Board
+- Soldering Iron
 
 ### Implementation
 For Software:
@@ -89,10 +87,8 @@ For Hardware:
 [Add any extra demo materials/links]
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
-
+- K Ananya Ramesh: Hardware
+- Aardra S V: Software
 ---
 Made with ❤️ at TinkerHub Useless Projects 
 
